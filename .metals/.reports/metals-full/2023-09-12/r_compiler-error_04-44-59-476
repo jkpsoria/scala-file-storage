@@ -1,0 +1,133 @@
+file%3A%2F%2F%2FUsers%2Fjkpancho%2Fjkpancho-file-storage%2Fpublic%2Ffiles%2FEither.scala:2: error: ; expected but : found
+  sealed abstract class Either[+A, +B] extends Product with Serializable:
+                                                                        ^
+occurred in the presentation compiler.
+
+action parameters:
+uri: file://<WORKSPACE>/public/files/Either.scala
+text:
+package scala.util
+  sealed abstract class Either[+A, +B] extends Product with Serializable:
+    def isLeft: Boolean
+    def isRight: Boolean
+
+    def fold[C](fa: A => C, fb: B => C): C = this match
+      case Right(b) => fb(b)
+      case Left(a) => fa(a)
+
+    def swap: Either[B, A] = this match
+      case Left(a) => Right(a)
+      case Right(b) => Left(b)
+
+    def joinRight[A1 >: A, B1 >: B, C](using B1 <:< Either[A1, C]): Either[A1, C] = this match
+      case Right(b) => b
+      case _        => this.asInstanceOf[Either[A1, C]]
+
+    def joinLeft[A1 >: A, B1 >: B, C](using A1 <:< Either[C, B1]): Either[C, B1] = this match
+      case Left(a) => a
+      case _       => this.asInstanceOf[Either[C, B1]]
+
+    def foreach[U](f: B => U): Unit = this match
+      case Right(b) => f(b)
+      case _        =>
+
+    def getOrElse[B1 >: B](or: => B1): B1 = this match
+      case Right(b) => b
+      case _        => or
+
+    def orElse[A1 >: A, B1 >: B](or: => Either[A1, B1]): Either[A1, B1] = this match
+      case Right(_) => this
+      case _        => or
+
+    final def contains[B1 >: B](elem: B1): Boolean = this match
+      case Right(b) => b == elem
+      case _        => false
+
+    def forall(f: B => Boolean): Boolean = this match
+      case Right(b) => f(b)
+      case _        => true
+
+    def exists(p: B => Boolean): Boolean = this match
+      case Right(b) => p(b)
+      case _        => false
+
+    def flatMap[A1 >: A, B1](f: B => Either[A1, B1]): Either[A1, B1] = this match
+      case Right(b) => f(b)
+      case _        => this.asInstanceOf[Either[A1, B1]]
+
+    def flatten[A1 >: A, B1](implicit ev: B <:< Either[A1, B1]): Either[A1, B1] =
+      flatMap(ev)
+
+    def map[B1](f: B => B1): Either[A, B1] = this match
+      case Right(b) => Right(f(b))
+      case _        => this.asInstanceOf[Either[A, B1]]
+
+    def filterOrElse[A1 >: A](p: B => Boolean, zero: => A1): Either[A1, B] = this match
+      case Right(b) if !p(b) => Left(zero)
+      case _                 => this
+
+    def toSeq: Seq[B] = this match
+      case Right(b) => Seq(b)
+      case _        => Seq.empty
+
+    def toOption: Option[B] = this match
+      case Right(b) => Some(b)
+      case _        => None
+
+    def toTry(implicit ev: A <:< Throwable): Try[B] = this match
+      case Right(b) => Success(b)
+      case Left(a)  => Failure(a)
+
+  final case class Left[+A, +B](value: A) extends Either[A, B]:
+    def isLeft  = true
+    def isRight = false
+
+  final case class Right[+A, +B](value: B) extends Either[A, B]:
+    def isLeft  = false
+    def isRight = true
+
+  object Either:
+    def cond[A, B](test: Boolean, right: => B, left: => A): Either[A, B] =
+      if (test) Right(right) else Left(left)
+
+
+
+error stacktrace:
+scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:367)
+	scala.meta.internal.parsers.ScalametaParser.expect(ScalametaParser.scala:369)
+	scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:373)
+	scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:389)
+	scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:393)
+	scala.meta.internal.parsers.ScalametaParser.statSeqBuf(ScalametaParser.scala:4357)
+	scala.meta.internal.parsers.ScalametaParser.bracelessPackageStats$1(ScalametaParser.scala:4579)
+	scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$11(ScalametaParser.scala:4590)
+	scala.meta.internal.parsers.ScalametaParser.autoEndPos(ScalametaParser.scala:349)
+	scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$10(ScalametaParser.scala:4590)
+	scala.meta.internal.parsers.ScalametaParser.tryParse(ScalametaParser.scala:201)
+	scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:4582)
+	scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:300)
+	scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:346)
+	scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:4550)
+	scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:4543)
+	scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:300)
+	scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:346)
+	scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:4543)
+	scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:4548)
+	scala.meta.internal.parsers.ScalametaParser.parseSourceImpl(ScalametaParser.scala:127)
+	scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$1(ScalametaParser.scala:124)
+	scala.meta.internal.parsers.ScalametaParser.parseRuleAfterBOF(ScalametaParser.scala:51)
+	scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:46)
+	scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:124)
+	scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	scala.meta.parsers.Parse$$anon$1.apply(Parse.scala:36)
+	scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:206)
+	scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:54)
+	scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$semanticdbTextDocument$1(ScalaPresentationCompiler.scala:350)
