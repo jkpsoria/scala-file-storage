@@ -1,0 +1,75 @@
+2023.09.12 03:15:25 INFO  Started: Metals version 1.0.1 in folders '/Users/jkpancho/jkpancho-file-storage' for client Visual Studio Code 1.81.1.[0m
+Sep 12, 2023 3:15:25 AM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+Sep 12, 2023 3:15:25 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+Sep 12, 2023 3:15:25 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:/Users/jkpancho/jkpancho-file-storage/.metals/metals (H2 2.1)
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.060s)
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+Sep 12, 2023 3:15:26 AM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.050s)
+2023.09.12 03:15:27 INFO  time: initialize in 1.9s[0m
+2023.09.12 03:15:28 WARN  Build server is not auto-connectable.[0m
+2023.09.12 03:15:33 INFO  running '/opt/local/sdkman/candidates/java/current/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/d0/w29x5ycn18n_8fkpdh2rbjjr0000gp/T/metals1348006125765071085/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'[0m
+2023.09.12 03:15:33 WARN  no build target for: /Users/jkpancho/jkpancho-file-storage/project/metals.sbt[0m
+2023.09.12 03:15:33 WARN  no build target for: /Users/jkpancho/jkpancho-file-storage/project/project/metals.sbt[0m
+2023.09.12 03:15:33 INFO  skipping build import with status 'Started'[0m
+2023.09.12 03:15:40 INFO  [info] welcome to sbt 1.7.2 (Amazon.com Inc. Java 1.8.0_382)[0m
+2023.09.12 03:15:46 INFO  no build target found for /Users/jkpancho/jkpancho-file-storage/project/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.3.0[0m
+2023.09.12 03:15:52 INFO  [info] loading settings for project jkpancho-file-storage-build-build-build from metals.sbt ...[0m
+2023.09.12 03:15:54 INFO  [info] loading project definition from /Users/jkpancho/jkpancho-file-storage/project/project/project[0m
+2023.09.12 03:16:00 INFO  [info] loading settings for project jkpancho-file-storage-build-build from metals.sbt ...[0m
+2023.09.12 03:16:00 INFO  [info] loading project definition from /Users/jkpancho/jkpancho-file-storage/project/project[0m
+2023.09.12 03:16:05 INFO  [success] Generated .bloop/jkpancho-file-storage-build-build.json[0m
+2023.09.12 03:16:05 INFO  [success] Total time: 5 s, completed 09 12, 23 3:16:05 AM[0m
+2023.09.12 03:16:07 INFO  [info] loading settings for project jkpancho-file-storage-build from metals.sbt,plugins.sbt ...[0m
+2023.09.12 03:16:07 INFO  [info] loading project definition from /Users/jkpancho/jkpancho-file-storage/project[0m
+2023.09.12 03:16:12 INFO  [success] Generated .bloop/jkpancho-file-storage-build.json[0m
+2023.09.12 03:16:13 INFO  [success] Total time: 6 s, completed 09 12, 23 3:16:13 AM[0m
+2023.09.12 03:16:20 INFO  [info] loading settings for project root from build.sbt ...[0m
+2023.09.12 03:16:20 INFO  [info]   __              __[0m
+2023.09.12 03:16:20 INFO  [info]   \ \     ____   / /____ _ __  __[0m
+2023.09.12 03:16:20 INFO  [info]    \ \   / __ \ / // __ `// / / /[0m
+2023.09.12 03:16:20 INFO  [info]    / /  / /_/ // // /_/ // /_/ /[0m
+2023.09.12 03:16:20 INFO  [info]   /_/  / .___//_/ \__,_/ \__, /[0m
+2023.09.12 03:16:20 INFO  [info]       /_/               /____/[0m
+2023.09.12 03:16:20 INFO  [info] [0m
+2023.09.12 03:16:20 INFO  [info] Version 2.8.20 running Java 1.8.0_382[0m
+2023.09.12 03:16:20 INFO  [info] [0m
+2023.09.12 03:16:20 INFO  [info] Play is run entirely by the community. Please consider contributing and/or donating:[0m
+2023.09.12 03:16:20 INFO  [info] https://www.playframework.com/sponsors[0m
+2023.09.12 03:16:20 INFO  [info] [0m
+2023.09.12 03:16:28 INFO  [success] Generated .bloop/root.json[0m
+2023.09.12 03:16:28 INFO  [success] Generated .bloop/root-test.json[0m
+2023.09.12 03:16:28 INFO  [success] Total time: 6 s, completed 09 12, 23 3:16:28 AM[0m
+2023.09.12 03:16:28 INFO  time: ran 'sbt bloopInstall' in 55s[0m
+2023.09.12 03:16:28 INFO  Attempting to connect to the build server...[0m
+2023.09.12 03:16:28 INFO  Bloop uses /opt/local/sdkman/candidates/java/current defined at /Users/jkpancho/.bloop/bloop.json[0m
+2023.09.12 03:16:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/jkpancho/jkpancho-file-storage/.metals/bsp.trace.json or /Users/jkpancho/Library/Caches/org.scalameta.metals/bsp.trace.json[0m
+2023.09.12 03:16:30 INFO  Attempting to connect to the build server...[0m
+2023.09.12 03:16:30 INFO  Bloop uses /opt/local/sdkman/candidates/java/current defined at /Users/jkpancho/.bloop/bloop.json[0m
+2023.09.12 03:16:30 INFO  Attempting to connect to the build server...[0m
+2023.09.12 03:16:30 INFO  Bloop uses /opt/local/sdkman/candidates/java/current defined at /Users/jkpancho/.bloop/bloop.json[0m
+2023.09.12 03:16:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/jkpancho/jkpancho-file-storage/project/.metals/bsp.trace.json or /Users/jkpancho/Library/Caches/org.scalameta.metals/bsp.trace.json[0m
+2023.09.12 03:16:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/jkpancho/jkpancho-file-storage/project/project/.metals/bsp.trace.json or /Users/jkpancho/Library/Caches/org.scalameta.metals/bsp.trace.json[0m
+2023.09.12 03:16:30 INFO  time: Connected to build server in 2.46s[0m
+2023.09.12 03:16:30 INFO  Connected to Build server: Bloop v1.5.8[0m
+2023.09.12 03:16:31 INFO  time: Imported build in 0.24s[0m
+2023.09.12 03:16:53 INFO  time: indexed workspace in 21s[0m
